@@ -1,6 +1,7 @@
 package net.duck.magicmod;
 
 import net.duck.magicmod.block.ModBlocks;
+import net.duck.magicmod.item.ModCreativeModeTabs;
 import net.duck.magicmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
@@ -35,6 +36,9 @@ public class MagicMod
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
+        ModCreativeModeTabs.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)

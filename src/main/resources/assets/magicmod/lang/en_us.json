@@ -1,3 +1,7 @@
 {
-  "item.magicmod.test_item": "Test Item (WIP)"
+  "item.magicmod.test_item": "Test Item (WIP)",
+  "block.magicmod.test_block": "Test Block (WIP)",
+
+  "creativetab.magicmod.test_items": "Test Mod Tab For Items",
+  "creativetab.magicmod.test_blocks": "Test Mod Tab For Blocks"
 }
