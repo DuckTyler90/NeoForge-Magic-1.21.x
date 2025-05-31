@@ -1,5 +1,7 @@
 package net.duck.magicmod;
 
+import net.duck.magicmod.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -23,7 +25,6 @@ import net.neoforged.neoforge.event.server.ServerStartingEvent;
 public class MagicMod
 {
     public static final String MOD_ID = "magicmod";
-    // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public MagicMod(IEventBus modEventBus, ModContainer modContainer)
@@ -31,6 +32,8 @@ public class MagicMod
         NeoForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
+        ModItems.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
@@ -40,7 +43,9 @@ public class MagicMod
 
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.TEST_ITEM);
+        }
     }
 
     @SubscribeEvent
