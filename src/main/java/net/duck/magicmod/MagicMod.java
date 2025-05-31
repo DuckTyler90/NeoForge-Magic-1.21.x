@@ -1,5 +1,6 @@
 package net.duck.magicmod;
 
+import net.duck.magicmod.block.ModBlocks;
 import net.duck.magicmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
@@ -45,6 +46,10 @@ public class MagicMod
     {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.TEST_ITEM);
+        }
+
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.TEST_BLOCK);
         }
     }
 
