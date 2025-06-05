@@ -26,7 +26,7 @@ Discord - DuckTyler90
 
 ---
 
-## [0.0.4] - 2025-06-05
+## [0.1.0] - 2025-06-05
 ### Added
 - Added Alter
 - Added Mini Pedestals
