@@ -1,6 +1,8 @@
 package net.duck.magicmod.block;
 
 import net.duck.magicmod.MagicMod;
+import net.duck.magicmod.block.pedestal.MiniPedestalBlock;
+import net.duck.magicmod.block.pedestal.PedestalBlock;
 import net.duck.magicmod.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -19,6 +21,13 @@ public class ModBlocks {
     public static final DeferredBlock<Block> TEST_BLOCK = registerBlock("test_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(4f).requiresCorrectToolForDrops().sound(SoundType.ANCIENT_DEBRIS)));
+    public static final DeferredBlock<Block> PEDESTAL = registerBlock("pedestal",
+            () -> new PedestalBlock(BlockBehaviour.Properties.of().noOcclusion()));
+
+    public static final DeferredBlock<Block> MINI_PEDESTAL = registerBlock("mini_pedestal",
+            () -> new MiniPedestalBlock(BlockBehaviour.Properties.of().noOcclusion()));
+
+
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

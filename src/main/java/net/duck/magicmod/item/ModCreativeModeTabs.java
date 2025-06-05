@@ -10,7 +10,7 @@ import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import javax.swing.*;
+
 import java.util.function.Supplier;
 
 public class ModCreativeModeTabs {
@@ -30,6 +30,8 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.magicmod.test_blocks"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.TEST_BLOCK);
+                        output.accept(ModBlocks.PEDESTAL);
+                        output.accept(ModBlocks.MINI_PEDESTAL);
                     }).build());
 
     public static void register(IEventBus eventBus) {
